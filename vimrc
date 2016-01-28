@@ -1,7 +1,5 @@
 set nocompatible
 
-source /usr/share/vim/google/google.vim
-
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
