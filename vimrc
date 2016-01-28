@@ -1,75 +1,11 @@
-set nocompatible
 
-" Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Plugins from github
-" Package manager
-Plugin 'VundleVim/Vundle.vim'
-
-" Class outline viewer
-Plugin 'majutsushi/tagbar'
-
-" Syntax checker
-Plugin 'scrooloose/syntastic'
-
-" File explorer
-Plugin 'scrooloose/nerdtree'
-
-" Comment shortcuts
-Plugin 'scrooloose/nerdcommenter'
-
-" Text Object type for function arguments
-Plugin 'vim-scripts/argtextobj.vim'
-
-" Use tab for autocomplete
-Plugin 'ervandew/supertab'
-
-" Use <leader>ww to swap 2 windows
-Plugin 'wesQ3/vim-windowswap'
-
-" Status line
-Plugin 'bling/vim-airline'
-
-" Shows indentation level
-Plugin 'Yggdroot/indentLine'
-
-" Closes brackets, quotes, etc
-Plugin 'Raimondi/delimitMate'
-
-" File finder
-Plugin 'ctrlpvim/ctrlp.vim'
-
-" Git integration
-Plugin 'airblade/vim-gitgutter'
-
-" Hide lines matching a pattern
-Plugin 'embear/vim-foldsearch'
-
-call vundle#end()
-" End Vundle
-
-filetype plugin indent on
+source .vimrc.d/plugins.vim
 syntax on
 
 "===================="
 " Plugin Options     "
 "===================="
 
-" Airline
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#buffer_nr_show=1
-let g:airline_powerline_fonts=1 " Enable when fonts installed
-set laststatus=2 " enables airline without splitting
-
-" Airline extension support
-let g:airline#extensions#syntastic#enabled=1
-let g:airline#extensions#tagbar#enable=1
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
 
 " Delimitmate options
 let delimitMate_expand_cr = 1
@@ -83,12 +19,6 @@ let delimitMate_expand_cr = 1
 set t_Co=256
 set background=dark
 colorscheme solarized
-
-" Toggle NerdTree with Ctrl+n
-nmap <F1> :NERDTreeToggle<CR>
-
-" Toggle Tagbar
-nmap <F2> :TagbarToggle<CR>
 
 "===================="
 " Autocommands       "
@@ -120,10 +50,6 @@ set number
 
 set cursorline
 
-
-" Useful import scripts
-command SortImports !/google/src/head/depot/google3/tools/java/sort_java_imports.py %
-command UnusedImports !/google/src/head/depot/google3/tools/java/remove_unused_imports.py --fix %
 
 " Change default split positioning
 set splitbelow
